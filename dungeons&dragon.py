@@ -26,15 +26,16 @@ choice=int(input("Enter either 1 or 2 : "))
 
 
 if choice ==1:
-    print("\nYou attack the dragon and deal",str(damage),"damage to the dragon")
+    print("\nYou attack the dragon and deal",str(damage),"damage to the dragon.")
     dragon_health-=20
     print("The Dragon current Health is",dragon_health)
 elif choice ==2:
     print("\nYou run away from the dragon, the dragon chase you!")
-    print("The dragon strike you and deal ",str(dragon_damage),"damage to you")
+    print("The dragon strike you and deal",str(dragon_damage),"damage to you.")
     health-=50
     print("Your current Health is",health)
 elif choice ==3:
     print("You choose the hidden move. \nYou become friend with the dragon")
 else :
     print("\nYou choose the invalid move, the dragon eat you alive..")
+print("Thank for playing")
