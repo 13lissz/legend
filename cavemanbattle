@@ -1,0 +1,67 @@
+import random
+print("*******************************") 
+print("*Welcome to the Caveman Battle*") 
+print("*******************************")
+
+player1_name = input("Player 1, What is your name : ")
+player2_name = input("Player 2, What is your name : ")
+
+#set the initial health,ammo and damages
+player1_health = 100
+player1_ammo = 55
+player1_damage = 35
+
+player2_health = 122
+player2_ammo = 52
+player2_damage = 22
+
+print("Player 1 has",str(player1_health),"health,",str(player1_ammo),"ammo,",str(player1_damage),"damage,")
+print("Player 2 has",str(player2_health),"health,",str(player2_ammo),"ammo,",str(player2_damage),"damage,")
+
+print('\n Your cave suddenly is attacked by wild animals. What do you do?')
+print('1. Fight')
+print('2. Run')
+print('3. Search for supplies')
+
+player1_choice = int(input(player1_name + " , enter 1,2 or 3:")) 
+ 
+if player1_choice == 1: 
+    print('\n ', player1_name , 'decides to fight the intruders and does ' , str(player1_damage), " damage per shot! ") 
+    player1_ammo -= 10 
+    print("The animal rush to",player2_name,"with an injured leg")
+    print("The animal almost near you",player2_name,"What you do?")
+    print('1. Fight')
+    print('2. Run')
+
+    player2_choice = int(input(player2_name + " , enter 1 or 2 :")) 
+    if player2_choice == 1:
+        print('\n ', player2_name , 'decides to fight the intruders and does ' , str(player2_damage), " damage per shot! ")
+        player2_ammo -= 10
+    if player2_choice == 2:
+        print(player2_name,"decide to run away.",player1_name,"What do you do?")
+        print('1. Fight')
+        print('2. Run')
+        player1_choice = int(input(player1_name + " , enter 1 or 2 :"))
+        if player1_choice == 1: 
+            print(player1_name,"shot the animal and does",str(player2_damage), " damage per shot! ")
+        elif player1_choice == 2:
+            print("The animal manage to chase",player2_name,"and bite one of",player2_name,"leg")
+            print(player1_name,"manage to run away from the animal while",player2_name,"was eaten alive")
+        else :
+            print(player1_name,"is panic.")
+            print("The animal manage to chase",player2_name,"and bite one of",player2_name,"leg")
+            print(player2_name,"is eaten alive while",player1_name,"is waiting for his/her fate")
+    if player1_ammo > 0: 
+        print('\n ' , player1_name , 'defeated the animals!!',player1_name,"has" , str(player1_ammo) , "rounds of ammo left") 
+elif player1_choice == 2: 
+    print('lived to fight another day') 
+elif player1_choice == 3: 
+    random_number = random.randint(1,10) 
+    print(random_number) 
+    if random_number > 5: 
+        print("the manage to save some foods") 
+    else: 
+        print("they manage to ran away with their cloths")
+    print('the animals manage to chase them out') 
+else: 
+    print('Invalid input, sad day for the caveman')
