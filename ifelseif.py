@@ -11,13 +11,13 @@
 name = input("What is your name : ")
 mark = int(input("What is your mark : "))
 if mark >= 80:
-    print("You are briliant")
-    grade="A"
+    print("You are briliant\n")
+    grade="A-B"
 elif mark >= 60:
-    print("You did okay")
-    grade="B"
+    print("You did okay\n")
+    grade="C-D"
 else:
-    print("Better luck next time")
-    grade="C"
+    print("Better luck next time\n")
+    grade="E-F"
 
 print("Hi",name,"your mark is",mark,"your grade is",grade)
